@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sfx-pichoop.wav-4e0ae936e8d433b3d900bb3bec68a678.sample"
+
+[deps]
+
+source_file="res://SFX/sfx-pichoop.wav"
+dest_files=[ "res://.import/sfx-pichoop.wav-4e0ae936e8d433b3d900bb3bec68a678.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

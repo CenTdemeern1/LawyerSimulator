@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sfx-bvvt.wav-834ccac5d401df9a927762892ad2b083.sample"
+
+[deps]
+
+source_file="res://SFX/sfx-bvvt.wav"
+dest_files=[ "res://.import/sfx-bvvt.wav-834ccac5d401df9a927762892ad2b083.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

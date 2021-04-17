@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sfx-crowdgoeswhile.wav-3bb40b877070f071ff0dde8ff973fb99.sample"
+
+[deps]
+
+source_file="res://SFX/sfx-crowdgoeswhile.wav"
+dest_files=[ "res://.import/sfx-crowdgoeswhile.wav-3bb40b877070f071ff0dde8ff973fb99.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

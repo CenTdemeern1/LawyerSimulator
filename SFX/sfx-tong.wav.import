@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sfx-tong.wav-866fe0c254e8a9781d5a138de984bcd1.sample"
+
+[deps]
+
+source_file="res://SFX/sfx-tong.wav"
+dest_files=[ "res://.import/sfx-tong.wav-866fe0c254e8a9781d5a138de984bcd1.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

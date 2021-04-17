@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sfx-loudbang.wav-6652642297f07b38efb11dfa7553b0af.sample"
+
+[deps]
+
+source_file="res://SFX/sfx-loudbang.wav"
+dest_files=[ "res://.import/sfx-loudbang.wav-6652642297f07b38efb11dfa7553b0af.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

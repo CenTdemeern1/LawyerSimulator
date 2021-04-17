@@ -1,0 +1,164 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://Textbox.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/textbox.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/talking.png" type="Texture" id=3]
+[ext_resource path="res://ContinueAnim.gd" type="Script" id=4]
+[ext_resource path="res://Sprites/continue.png" type="Texture" id=5]
+[ext_resource path="res://SFX/sfx-dink.wav" type="AudioStream" id=6]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 3 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 3 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 3 )
+region = Rect2( 48, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 3 )
+region = Rect2( 64, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 3 )
+region = Rect2( 80, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 3 )
+region = Rect2( 96, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 3 )
+region = Rect2( 112, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=9]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
+"loop": true,
+"name": "default",
+"speed": 20.0
+} ]
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 5 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 5 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 5 )
+region = Rect2( 48, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 5 )
+region = Rect2( 64, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 5 )
+region = Rect2( 80, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 5 )
+region = Rect2( 96, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 5 )
+region = Rect2( 112, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=18]
+animations = [ {
+"frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ) ],
+"loop": true,
+"name": "default",
+"speed": 20.0
+} ]
+
+[node name="Textbox" type="Control"]
+anchor_top = 0.7
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="NinePatchRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 4, 4 )
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Text" type="RichTextLabel" parent="."]
+anchor_left = 0.001
+anchor_top = 0.006
+anchor_right = 0.999
+anchor_bottom = 0.994
+margin_left = -0.024
+margin_top = -0.08
+margin_right = 0.0239258
+margin_bottom = 0.0800018
+scroll_active = false
+scroll_following = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+
+[node name="Continue" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+
+[node name="Talking" type="AudioStreamPlayer" parent="."]
+
+[node name="TalkingIndicator" type="Control" parent="."]
+anchor_left = 0.937
+anchor_top = 0.639
+anchor_right = 0.999
+anchor_bottom = 0.994
+margin_left = -0.488037
+margin_top = -0.0200119
+margin_right = 0.0239258
+margin_bottom = 0.0800018
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Talking" type="AnimatedSprite" parent="TalkingIndicator"]
+scale = Vector2( 4, 4 )
+frames = SubResource( 9 )
+frame = 3
+playing = true
+centered = false
+
+[node name="Continue" type="Node2D" parent="TalkingIndicator"]
+visible = false
+
+[node name="Continue" type="AnimatedSprite" parent="TalkingIndicator/Continue"]
+position = Vector2( 32, 32 )
+scale = Vector2( 4, 4 )
+frames = SubResource( 18 )
+playing = true
+script = ExtResource( 4 )

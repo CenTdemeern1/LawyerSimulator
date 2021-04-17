@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sfx-tap.wav-3d7577f64e8d28b6a31dc88272cbc8bd.sample"
+
+[deps]
+
+source_file="res://SFX/sfx-tap.wav"
+dest_files=[ "res://.import/sfx-tap.wav-3d7577f64e8d28b6a31dc88272cbc8bd.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sfx-fwasshing.wav-e1f1de4d557db2c7458b92f60cb6afce.sample"
+
+[deps]
+
+source_file="res://SFX/sfx-fwasshing.wav"
+dest_files=[ "res://.import/sfx-fwasshing.wav-e1f1de4d557db2c7458b92f60cb6afce.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

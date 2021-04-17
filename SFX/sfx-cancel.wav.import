@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sfx-cancel.wav-1c7af6fa3d9c7ddd3b3ab9be6a289590.sample"
+
+[deps]
+
+source_file="res://SFX/sfx-cancel.wav"
+dest_files=[ "res://.import/sfx-cancel.wav-1c7af6fa3d9c7ddd3b3ab9be6a289590.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

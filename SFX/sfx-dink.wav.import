@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sfx-dink.wav-dbcd9300da00c24a2ad8ad425fa1afe8.sample"
+
+[deps]
+
+source_file="res://SFX/sfx-dink.wav"
+dest_files=[ "res://.import/sfx-dink.wav-dbcd9300da00c24a2ad8ad425fa1afe8.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=18702.0
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sfx-photosnap.wav-cac01a8bab06b95fdda1c47d5516a72a.sample"
+
+[deps]
+
+source_file="res://SFX/sfx-photosnap.wav"
+dest_files=[ "res://.import/sfx-photosnap.wav-cac01a8bab06b95fdda1c47d5516a72a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sfx-grinding.wav-5d3cb6d4819d3503f402e2e9e1c23af5.sample"
+
+[deps]
+
+source_file="res://SFX/sfx-grinding.wav"
+dest_files=[ "res://.import/sfx-grinding.wav-5d3cb6d4819d3503f402e2e9e1c23af5.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

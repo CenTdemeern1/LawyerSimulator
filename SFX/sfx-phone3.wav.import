@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sfx-phone3.wav-23c7d40ccdaf78546a93af426e68aa70.sample"
+
+[deps]
+
+source_file="res://SFX/sfx-phone3.wav"
+dest_files=[ "res://.import/sfx-phone3.wav-23c7d40ccdaf78546a93af426e68aa70.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

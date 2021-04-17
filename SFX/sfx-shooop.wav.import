@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sfx-shooop.wav-7929587b8c3f5f882f538b6ee6e02f63.sample"
+
+[deps]
+
+source_file="res://SFX/sfx-shooop.wav"
+dest_files=[ "res://.import/sfx-shooop.wav-7929587b8c3f5f882f538b6ee6e02f63.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

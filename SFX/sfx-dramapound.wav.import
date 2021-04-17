@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sfx-dramapound.wav-2d7687149d5cf59fcb6bcb7b0c61fd3d.sample"
+
+[deps]
+
+source_file="res://SFX/sfx-dramapound.wav"
+dest_files=[ "res://.import/sfx-dramapound.wav-2d7687149d5cf59fcb6bcb7b0c61fd3d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

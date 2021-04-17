@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sfx-thud3.wav-013b794d481eb6c82195fd7495b52a01.sample"
+
+[deps]
+
+source_file="res://SFX/sfx-thud3.wav"
+dest_files=[ "res://.import/sfx-thud3.wav-013b794d481eb6c82195fd7495b52a01.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

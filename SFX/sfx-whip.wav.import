@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sfx-whip.wav-8b3654852d379c3efcb21ac197f1b782.sample"
+
+[deps]
+
+source_file="res://SFX/sfx-whip.wav"
+dest_files=[ "res://.import/sfx-whip.wav-8b3654852d379c3efcb21ac197f1b782.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

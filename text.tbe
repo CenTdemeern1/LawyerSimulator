@@ -1,0 +1,58 @@
+# Textbox events file.
+# A human-readable format for text boxes with events like sound effects.
+
+[meta startsequence 0]
+#This is how you define which sequence is the first to be run in the file.
+
+[seq 0] #Sequence 0. The starting sequence. Sequences don't have to use numbers for their identifiers, they can also use names.
+[text color green] #Sets text color
+[text speed 0.2] #1 divided by this number is the number of characters per second. If it's 0, text will be displayed instantly.
+[text positioning centered]
+[talk sound sfx-typwriter]
+[talk mouth false]
+November 28, 8:25 AM
+CenT & Co. Programming Offices
+[p] # Adds a pause and waits for the user to continue to move on to the next textbox.
+[jmp 1] #Jump to another sequence.
+[end] #End sequence
+
+[seq 1]
+[text color white]
+[talk sound sfx-typwriter]
+[text speed 0.0125]
+click click click click click click
+click click click click click click
+click click click click click click
+[continue] #Moves on to the next textbox without consent of the user. Used when a character is rambling.
+click click click click click click
+click click click click click click
+click click click click click click
+[jsr 2] #Jump to another sequence. When it ends, continue from here. (Adds this point onto the stack.)
+[text color white]
+[talk sound sfx-typwriter]
+[text speed 0.0125]
+click click click click click click
+click click click click click click
+click click click click click click
+[continue]
+[sfx sfx-whack]
+[shake]
+[talk sound sfx-blipmale]
+[text speed 0.05]
+Keep it down, will ya?
+[p]
+[talk sound none]
+[text speed 0]
+(Press R to reload)
+#This is the ending point of the scene
+[end]
+
+[seq 2]
+[continue]
+[text color blue]
+[talk sound none]
+[text speed 0.025]
+(What's this loud typing noise?)
+[wait 3] #Time to wait, in seconds
+[continue]
+[end]

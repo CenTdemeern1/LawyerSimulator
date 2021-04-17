@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sfx-bling2.wav-c1c6f89a7a4d8295af4871fae596e5f1.sample"
+
+[deps]
+
+source_file="res://SFX/sfx-bling2.wav"
+dest_files=[ "res://.import/sfx-bling2.wav-c1c6f89a7a4d8295af4871fae596e5f1.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
