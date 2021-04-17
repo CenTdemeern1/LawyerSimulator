@@ -19,26 +19,40 @@ var reading_header = true
 var eof = false
 var waiting_for_user = false
 
-func read_out_tbf():
+func read_out_tbf(append=false):
 	tbf.open(textbox_file,File.READ)
-	tb = tbf.get_as_text()
+	if append:
+		tb += tbf.get_as_text()
+	else:
+		tb = tbf.get_as_text()
 	tbf.close()
-	clear()
-	stack=[]
-	charn=0
-	waittimer=0
-	waitlength=0
-	previous_char = ""
-	escape = false
-	comment = false
-	command = false
-	cmd = []
-	skip_next_newline = false
-	waiting_for_user = false
-	$TalkingIndicator/Talking.show()
-	$TalkingIndicator/Continue.hide()
-	eof=false
-	reading_header=true
+	if !append:
+		clear()
+		stack=[]
+		charn=0
+		waittimer=0
+		waitlength=0
+		previous_char = ""
+		escape = false
+		comment = false
+		command = false
+		cmd = []
+		skip_next_newline = false
+		waiting_for_user = false
+		$TalkingIndicator/Talking.show()
+		$TalkingIndicator/Continue.hide()
+		eof=false
+		reading_header=true
+
+func load_tbe(path):
+	textbox_file=path
+	read_out_tbf()
+
+func append_tbe(path):
+	var o = textbox_file
+	textbox_file=path
+	read_out_tbf(true)
+	textbox_file=o
 
 func _ready():
 	read_out_tbf()
@@ -62,7 +76,7 @@ func clear():
 	$Text.clear()
 
 func look_for_sequence(name):
-	return tb.find("[seq "+name+"]")
+	return tb.find_last("[seq "+name+"]")#Find_last so append can overwrite
 
 func jump_to_sequence(name):
 	var n = look_for_sequence(name)
@@ -117,6 +131,11 @@ func execute_command():
 		clear()
 	if cmd[0]=="wait":
 		wait(float(cmd[1]))
+	if cmd[0]=="tbe":
+		if cmd[1]=="load":
+			call_deferred("load_tbe",cmd[2])
+		elif cmd[1]=="append":
+			append_tbe(cmd[2])
 
 
 func parse_tb(t):

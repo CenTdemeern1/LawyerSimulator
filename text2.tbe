@@ -1,0 +1,16 @@
+[meta startsequence 0]
+
+[seq 0]
+[text speed 0.1]
+[sfx sfx-lightbulb]
+Hi!
+[wait 0.5]
+[text speed 0.025]
+Hello from the second file!
+[p]
+Now appending file 1.
+[tbe append text.tbe]
+[p]
+Now jumping to seq 0.
+[jmp 0]
+[end]

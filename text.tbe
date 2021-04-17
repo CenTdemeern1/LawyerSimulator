@@ -6,7 +6,7 @@
 
 [seq 0] #Sequence 0. The starting sequence. Sequences don't have to use numbers for their identifiers, they can also use names.
 [text color green] #Sets text color
-[text speed 0.2] #1 divided by this number is the number of characters per second. If it's 0, text will be displayed instantly.
+[text speed 0.1] #1 divided by this number is the number of characters per second. If it's 0, text will be displayed instantly.
 [text positioning centered]
 [talk sound sfx-typwriter]
 [talk mouth false]
@@ -39,12 +39,20 @@ click click click click click click
 [shake]
 [talk sound sfx-blipmale]
 [text speed 0.05]
-Keep it down, will ya?
+[talk mouth true]
+Keep it down, [wait 0.25]
+will ya?
+#Running a command will ignore any characters after it on that line including the line break.
+#Said command can also be blank: []
 [p]
 [talk sound none]
 [text speed 0]
+[talk mouth false]
+[sfx sfx-whoops]
 (Press R to reload)
-#This is the ending point of the scene
+#This is the ending point of the scene.
+[p]
+[tbe load res://text2.tbe]#This is how you load another tbe file.
 [end]
 
 [seq 2]
@@ -53,6 +61,6 @@ Keep it down, will ya?
 [talk sound none]
 [text speed 0.025]
 (What's this loud typing noise?)
-[wait 3] #Time to wait, in seconds
+[wait 1.5] #Time to wait, in seconds
 [continue]
 [end]
