@@ -8,9 +8,37 @@ Hi!
 [text speed 0.025]
 Hello from the second file!
 [p]
+[lda #10]#Load value 10 into accumulator
+[sta 0]#Store the value in the accumulator in position 0
+[lda #$f1]#Load hex value F1 (= 241) into accumulator
+[sta $F]#Store the value in the accumulator in position hex F (= 15)
+[lda 0]#Load the value in position 0 into the accumulator
+[lda 241]#All memory positions default to 0
+[lda $F]#Load the value in position hex F (= 15) into the accumulator (We stored hex F1 in there earlier)
+[beq #$F1 stack]#JSR to sequence "stack" if the accumulator currently holds the value $F1. (which it does)
+#You can also just do a normal number there, it doesn't have to be hexadecimal.
+#Values are prefixed with a # (you leave that out if you're referencing a position in memory)
+#Hexadecimal values are prefixed with a $
+#You can combine both in the order #$
+#Using something that's not a value as the first argument in BEQ will throw an error.
+#You can think of BEQ as an "if" statement
+#This feature exists so you can set story flags and stuff somewhere.
+#You're welcome.
+[end]
+
+[seq stack]
+Here is the sequence "stack", accessed via BEQ!
+[cls]#This command clears the stack. (the stack is what makes you return from a JSR)
+#If this sequence were to not jump, the scene would end here, since there is nothing to return to (via JSR)
+Stack was just cleared.
+[jmp appendseq]
+[end]
+
+[seq appendseq]
+[p]
 Now appending file 1.
 [tbe append text.tbe]
 [p]
 Now jumping to seq 0.
-[jmp 0]
+[jmp 0]#Sequence 0 was just overwritten by appending text.tbe.
 [end]

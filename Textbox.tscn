@@ -154,7 +154,6 @@ playing = true
 centered = false
 
 [node name="Continue" type="Node2D" parent="TalkingIndicator"]
-visible = false
 
 [node name="Continue" type="AnimatedSprite" parent="TalkingIndicator/Continue"]
 position = Vector2( 32, 32 )

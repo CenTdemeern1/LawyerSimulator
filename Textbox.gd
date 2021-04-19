@@ -19,6 +19,9 @@ var reading_header = true
 var eof = false
 var waiting_for_user = false
 
+var accumulator
+var mem = {}
+
 func read_out_tbf(append=false):
 	tbf.open(textbox_file,File.READ)
 	if append:
@@ -102,6 +105,18 @@ func wait(seconds):
 	waittimer=0
 	waitlength=seconds
 
+func perform_hex_conversion():
+	var isHex = false
+	if cmd[1].begins_with("$"):
+		cmd[1]=cmd[1].substr(1)
+		isHex=true
+	if isHex:
+		cmd[1]=("0x"+cmd[1]).hex_to_int()
+
+func jsr(seq):
+	stack.append(charn)
+	jump_to_sequence(seq)
+
 func execute_command():
 	if cmd[0]=="meta":
 		if cmd[1]=="startsequence":
@@ -118,8 +133,7 @@ func execute_command():
 	if cmd[0]=="jmp":
 		jump_to_sequence(cmd[1])
 	if cmd[0]=="jsr":
-		stack.append(charn)
-		jump_to_sequence(cmd[1])
+		jsr(cmd[1])
 	if cmd[0]=="end":
 		return_with_stack()
 	if cmd[0]=="p":
@@ -136,6 +150,31 @@ func execute_command():
 			call_deferred("load_tbe",cmd[2])
 		elif cmd[1]=="append":
 			append_tbe(cmd[2])
+	if cmd[0]=="lda":
+		var isValue = false
+		if cmd[1].begins_with("#"):
+			cmd[1]=cmd[1].substr(1)
+			isValue=true
+		perform_hex_conversion()
+		cmd[1] = int(cmd[1])
+		if isValue:
+			accumulator=cmd[1]
+		else:
+			accumulator=mem.get(cmd[1],0)
+	if cmd[0]=="sta":
+		perform_hex_conversion()
+		cmd[1] = int(cmd[1])
+		mem[cmd[1]] = accumulator
+	if cmd[0]=="beq":
+		if cmd[1].begins_with("#"):
+			cmd[1]=cmd[1].substr(1)
+		else:
+			push_error("Argument is not a value")
+		perform_hex_conversion()
+		if accumulator == int(cmd[1]):
+			jsr(cmd[2])
+	if cmd[0]=="cls":
+		stack=[]
 
 
 func parse_tb(t):

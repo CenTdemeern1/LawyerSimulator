@@ -40,7 +40,7 @@ click click click click click click
 [talk sound sfx-blipmale]
 [text speed 0.05]
 [talk mouth true]
-Keep it down, [wait 0.25]
+Keep it down, [wait 0.125]
 will ya?
 #Running a command will ignore any characters after it on that line including the line break.
 #Said command can also be blank: []
