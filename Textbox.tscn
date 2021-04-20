@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Textbox.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/textbox.png" type="Texture" id=2]
@@ -87,6 +87,19 @@ animations = [ {
 "speed": 20.0
 } ]
 
+[sub_resource type="Shader" id=19]
+code = "shader_type canvas_item;
+render_mode blend_mix;
+
+void fragment() {
+	vec4 tx = texture(TEXTURE, UV);
+	COLOR=vec4(tx.rgb,min(tx.a,fract(UV.x*8f)));
+}"
+custom_defines = ""
+
+[sub_resource type="ShaderMaterial" id=20]
+shader = SubResource( 19 )
+
 [node name="Textbox" type="Control"]
 anchor_top = 0.7
 anchor_right = 1.0
@@ -149,15 +162,31 @@ __meta__ = {
 [node name="Talking" type="AnimatedSprite" parent="TalkingIndicator"]
 scale = Vector2( 4, 4 )
 frames = SubResource( 9 )
-frame = 3
 playing = true
 centered = false
 
 [node name="Continue" type="Node2D" parent="TalkingIndicator"]
+visible = false
 
 [node name="Continue" type="AnimatedSprite" parent="TalkingIndicator/Continue"]
 position = Vector2( 32, 32 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 18 )
-playing = true
+script = ExtResource( 4 )
+
+[node name="Continue2" type="AnimatedSprite" parent="TalkingIndicator/Continue/Continue"]
+visible = false
+material = SubResource( 20 )
+position = Vector2( -16, 0 )
+frames = SubResource( 18 )
+
+[node name="Back" type="Node2D" parent="TalkingIndicator"]
+visible = false
+position = Vector2( -894, 0 )
+
+[node name="Back" type="AnimatedSprite" parent="TalkingIndicator/Back"]
+position = Vector2( -31.9999, 32 )
+scale = Vector2( 4, 4 )
+frames = SubResource( 18 )
+flip_h = true
 script = ExtResource( 4 )

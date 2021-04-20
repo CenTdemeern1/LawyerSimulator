@@ -1,0 +1,44 @@
+[meta startsequence start]
+
+[seq start]
+[text speed 0.025]
+[text color white]
+Cross-Examination
+[p]
+[text speed 0]
+[jmp 0]
+[end]
+
+[seq 0]
+[s forward 1]
+[text color green]
+This is testimony part 0!
+[s]
+[end]
+
+[seq 1]
+[s back 0]
+[s forward 2]
+[text color green]
+This is message 1!
+[s]
+[end]
+
+[seq 2]
+[s back 1]
+[s forward loop]
+[text color green]
+This is sequence 2!
+[s]
+[end]
+
+[seq loop]
+[text speed 0.025]
+[text color white]
+You usually talk to the people at your bench here.
+[p]
+looping back to 0!
+[p]
+[text speed 0]
+[jmp 0]
+[end]

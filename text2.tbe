@@ -31,7 +31,28 @@ Here is the sequence "stack", accessed via BEQ!
 [cls]#This command clears the stack. (the stack is what makes you return from a JSR)
 #If this sequence were to not jump, the scene would end here, since there is nothing to return to (via JSR)
 Stack was just cleared.
+Incrementing $1
+[inc $1]
+[lda $1]
+[beq #3 counted]
 [jmp appendseq]
+[end]
+
+[seq counted]
+[cls]
+[dec $1]
+[continue]
+[sfx sfx-lightbulb]
+Hey, you've looped a few times!
+[p]
+Time to move to file 3.[wait 1]
+.[wait 1]
+.
+[wait 2]
+...now!
+[sfx sfx-whoops]
+[p]
+[tbe load text3.tbe]
 [end]
 
 [seq appendseq]

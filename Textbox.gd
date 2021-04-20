@@ -18,6 +18,11 @@ var skip_next_newline = false
 var reading_header = true
 var eof = false
 var waiting_for_user = false
+var user_can_navigate = false
+var user_can_navigate_forward = false
+var user_can_navigate_back = false
+var user_can_press = false
+var navigation = {"forward":"", "back":"", "press":""}
 
 var accumulator
 var mem = {}
@@ -42,6 +47,10 @@ func read_out_tbf(append=false):
 		cmd = []
 		skip_next_newline = false
 		waiting_for_user = false
+		user_can_navigate_forward = false
+		user_can_navigate_back = false
+		user_can_press = false
+		user_can_navigate = false
 		$TalkingIndicator/Talking.show()
 		$TalkingIndicator/Continue.hide()
 		eof=false
@@ -175,7 +184,32 @@ func execute_command():
 			jsr(cmd[2])
 	if cmd[0]=="cls":
 		stack=[]
-
+	if cmd[0]=="inc" or cmd[0]=="dec":
+		if len(cmd)>1:
+			perform_hex_conversion()
+			var adsu = 0
+			if cmd[0]=="inc":
+				adsu = 1
+			else:
+				adsu = -1
+			mem[int(cmd[1])]=mem.get(int(cmd[1]),0)+adsu
+		else:
+			if cmd[0]=="inc":
+				accumulator+=1
+			else:
+				accumulator-=1
+	if cmd[0]=="s":
+		if len(cmd)==1:
+			waiting_for_user = true
+			user_can_navigate = true
+		else:
+			navigation[cmd[1]] = cmd[2]
+			if cmd[1] == "forward":
+				user_can_navigate_forward = true
+			if cmd[1] == "back":
+				user_can_navigate_back = true
+			if cmd[1] == "press":
+				user_can_press = true
 
 func parse_tb(t):
 	if t == "\n":
@@ -214,18 +248,41 @@ func parse_tb(t):
 		type(t)
 		return true
 
+func navigate(to):
+	jump_to_sequence(navigation[to])
+
 func _process(delta):
 	if Input.is_action_just_pressed("debug-reload"):
 		read_out_tbf()
 	if waiting_for_user or eof:
 		$TalkingIndicator/Talking.hide()
-		$TalkingIndicator/Continue.show()
-		if Input.is_action_just_pressed("proceed"):
+		$TalkingIndicator/Continue.visible=(!user_can_navigate) or user_can_navigate_forward
+		var cont = false
+		if user_can_navigate:
+			var j = false
+			var to = ""
+			if Input.is_action_just_pressed("proceed") or Input.is_action_just_pressed("navigate_forward") and user_can_navigate_forward:
+				cont=true
+				navigate("forward")
+			elif Input.is_action_just_pressed("navigate_back") and user_can_navigate_back:
+				cont=true
+				navigate("back")
+			elif Input.is_action_just_pressed("navigate_press") and user_can_press:
+				cont=true
+				navigate("press")
+		elif Input.is_action_just_pressed("proceed"):
+			cont=true
+		if cont:
+			user_can_navigate_forward = false
+			user_can_navigate_back = false
+			user_can_press = false
+			user_can_navigate = false
 			waiting_for_user=false
 			$TalkingIndicator/Talking.show()
 			$TalkingIndicator/Continue.hide()
 			$Continue.play()
 			clear()
+		$TalkingIndicator/Back.visible = user_can_navigate_back
 	else:
 		netimer += delta
 		if waittimer < waitlength:
