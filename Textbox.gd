@@ -210,6 +210,9 @@ func execute_command():
 				user_can_navigate_back = true
 			if cmd[1] == "press":
 				user_can_press = true
+	if cmd[0]=="bg" or cmd[0]=="background":
+		var bg : TextureRect = get_tree().get_nodes_in_group("Background")[int(cmd[1])]
+		bg.texture = load(cmd[2])
 
 func parse_tb(t):
 	if t == "\n":

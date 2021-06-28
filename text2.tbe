@@ -2,6 +2,7 @@
 
 [seq 0]
 [text speed 0.1]
+[bg 0 res://Sprites/cr2.png]
 [sfx sfx-lightbulb]
 Hi!
 [wait 0.5]
@@ -49,7 +50,8 @@ Time to move to file 3.[wait 1]
 .[wait 1]
 .
 [wait 2]
-...now!
+...[bg 0 res://Sprites/cr.png]
+now!
 [sfx sfx-whoops]
 [p]
 [tbe load text3.tbe]

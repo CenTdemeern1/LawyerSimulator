@@ -5,6 +5,7 @@
 #This is how you define which sequence is the first to be run in the file.
 
 [seq 0] #Sequence 0. The starting sequence. Sequences don't have to use numbers for their identifiers, they can also use names.
+[bg 0 res://Sprites/cr.png] #Sets background index 0 to the file at the path in the second argument
 [text color green] #Sets text color
 [text speed 0.1] #1 divided by this number is the number of characters per second. If it's 0, text will be displayed instantly.
 [text positioning centered]

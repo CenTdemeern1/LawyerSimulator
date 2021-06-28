@@ -1,7 +1,7 @@
 [gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Textbox.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/textbox.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/textbox_transparent.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/talking.png" type="Texture" id=3]
 [ext_resource path="res://ContinueAnim.gd" type="Script" id=4]
 [ext_resource path="res://Sprites/continue.png" type="Texture" id=5]
@@ -95,7 +95,6 @@ void fragment() {
 	vec4 tx = texture(TEXTURE, UV);
 	COLOR=vec4(tx.rgb,min(tx.a,fract(UV.x*8f)));
 }"
-custom_defines = ""
 
 [sub_resource type="ShaderMaterial" id=20]
 shader = SubResource( 19 )
@@ -162,6 +161,7 @@ __meta__ = {
 [node name="Talking" type="AnimatedSprite" parent="TalkingIndicator"]
 scale = Vector2( 4, 4 )
 frames = SubResource( 9 )
+frame = 3
 playing = true
 centered = false
 

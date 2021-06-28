@@ -1,0 +1,71 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Sprites/character/character1/talking-2.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/character/character1/talking-1.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/character/character1/talking-smiling-2.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/character/character1/talking-4.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/character/character1/talking-smiling-3.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/character/character1/talking-smiling-4.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/character/character1/talking-3.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/character/character1/talking-smiling-1.png" type="Texture" id=8]
+
+[sub_resource type="AnimatedTexture" id=1]
+frames = 4
+fps = 8.0
+frame_0/texture = ExtResource( 2 )
+frame_1/texture = ExtResource( 1 )
+frame_1/delay_sec = 0.0
+frame_2/texture = ExtResource( 7 )
+frame_2/delay_sec = 0.0
+frame_3/texture = ExtResource( 4 )
+frame_3/delay_sec = 0.0
+
+[sub_resource type="AnimatedTexture" id=2]
+frames = 4
+fps = 8.0
+frame_0/texture = ExtResource( 8 )
+frame_1/texture = ExtResource( 3 )
+frame_1/delay_sec = 0.0
+frame_2/texture = ExtResource( 5 )
+frame_2/delay_sec = 0.0
+frame_3/texture = ExtResource( 6 )
+frame_3/delay_sec = 0.0
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Talking" type="TextureRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource( 1 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TalkingSmile" type="TextureRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource( 2 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Idle" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
