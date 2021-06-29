@@ -12,7 +12,9 @@ Cross-Examination
 [seq 0]
 [s forward 1]
 [text color green]
+[talk mouth true]
 This is testimony part 0!
+[talk mouth false]
 [s]
 [end]
 
@@ -20,7 +22,9 @@ This is testimony part 0!
 [s back 0]
 [s forward 2]
 [text color green]
+[talk mouth true]
 This is message 1!
+[talk mouth false]
 [s]
 [end]
 
@@ -28,14 +32,18 @@ This is message 1!
 [s back 1]
 [s forward loop]
 [text color green]
+[talk mouth true]
 This is sequence 2!
+[talk mouth false]
 [s]
 [end]
 
 [seq loop]
 [text speed 0.025]
 [text color white]
+[talk mouth true]
 You usually talk to the people at your bench here.
+[talk mouth false]
 [p]
 looping back to 0!
 [p]

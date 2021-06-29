@@ -150,6 +150,13 @@ func execute_command():
 	if cmd[0]=="talk":
 		if cmd[1]=="sound":
 			set_talk_sound(cmd[2])
+		if cmd[1]=="mouth":
+			if cmd[2]=="true":
+				var ch : CanvasItem = get_tree().get_nodes_in_group("Character")[0]
+				ch.get_node("AnimationPlayer").play("Talking")
+			elif cmd[2]=="false":
+				var ch : CanvasItem = get_tree().get_nodes_in_group("Character")[0]
+				ch.get_node("AnimationPlayer").play("Idle")
 	if cmd[0]=="continue":
 		clear()
 	if cmd[0]=="wait":
@@ -213,6 +220,12 @@ func execute_command():
 	if cmd[0]=="bg" or cmd[0]=="background":
 		var bg : TextureRect = get_tree().get_nodes_in_group("Background")[int(cmd[1])]
 		bg.texture = load(cmd[2])
+	if cmd[0]=="ch" or cmd[0]=="character":
+		var ch : CanvasItem = get_tree().get_nodes_in_group("Character")[int(cmd[1])]
+		if cmd[2]=="set":
+			ch.replace_by(load(cmd[3]).instance())
+		if cmd[2]=="anim" or cmd[2]=="animate":
+			ch.get_node("AnimationPlayer").play(cmd[3])
 
 func parse_tb(t):
 	if t == "\n":

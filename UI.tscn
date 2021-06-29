@@ -23,6 +23,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Control" parent="." instance=ExtResource( 3 )]
+[node name="Character" parent="." groups=[
+"Character",
+] instance=ExtResource( 3 )]
 
 [node name="Textbox" parent="." instance=ExtResource( 1 )]

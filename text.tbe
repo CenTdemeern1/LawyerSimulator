@@ -45,10 +45,10 @@ Keep it down, [wait 0.125]
 will ya?
 #Running a command will ignore any characters after it on that line including the line break.
 #Said command can also be blank: []
-[p]
 [talk sound none]
 [text speed 0]
 [talk mouth false]
+[p]
 [sfx sfx-whoops]
 (Press R to reload)
 #This is the ending point of the scene.
