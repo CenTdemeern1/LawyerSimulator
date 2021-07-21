@@ -147,6 +147,9 @@ func execute_command():
 		return_with_stack()
 	if cmd[0]=="p":
 		waiting_for_user = true
+	if cmd[0]=="movebg":
+		var bg : TextureRect = get_tree().get_nodes_in_group("Background")[int(cmd[1])]
+		bg.rect_position=Vector2(float(cmd[2]),float(cmd[3]))
 	if cmd[0]=="talk":
 		if cmd[1]=="sound":
 			set_talk_sound(cmd[2])

@@ -3,12 +3,19 @@
 [seq 0]
 [text speed 0.1]
 [bg 0 res://Sprites/cr2.png]
+[movebg 0 100 0]
 [sfx sfx-lightbulb]
 Hi!
 [wait 0.5]
 [text speed 0.025]
 Hello from the second file!
 [p]
+[movebg 0 0 0]
+[jmp memorytests]
+[end]
+
+
+[seq memorytests]
 [lda #10]#Load value 10 into accumulator
 [sta 0]#Store the value in the accumulator in position 0
 [lda #$f1]#Load hex value F1 (= 241) into accumulator
